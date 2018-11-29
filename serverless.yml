@@ -1,0 +1,15 @@
+service: variables-plugin-test
+frameworkVersion: ">=1.0.0 <2.0.0"
+plugins:
+   - test-variables
+
+provider:
+  name: aws
+  region: eu-west-1
+
+custom:
+  conf:
+    emailWithDefault: ${opt:email, "email@example.com"}
+    emailWithoutDefault: ${opt:email}
+    foobar: ${opt:foobar, "foobar"}
+
